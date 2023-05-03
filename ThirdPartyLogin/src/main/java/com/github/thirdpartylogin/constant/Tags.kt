@@ -9,7 +9,7 @@ object Tags {
     /**
      * 通用日志
      */
-    const val TAG_COMMON = "common"
+    const val COMMON = "common"
 
     /**
      * 微信登录日志
