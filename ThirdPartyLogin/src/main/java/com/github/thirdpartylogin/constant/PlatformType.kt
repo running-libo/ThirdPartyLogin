@@ -8,14 +8,14 @@ import androidx.annotation.IntDef
  * @Description: 定义登录的类型包含种类
  */
 @IntDef(
-    LoginType.WECHAT,
-    LoginType.QQ,
-    LoginType.SINA,
-    LoginType.GOOGLE,
-    LoginType.FACEBOOK)
+    PlatformType.WECHAT,
+    PlatformType.QQ,
+    PlatformType.SINA,
+    PlatformType.GOOGLE,
+    PlatformType.FACEBOOK)
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class LoginType {
+annotation class PlatformType {
     companion object {
         const val WECHAT = 1
         const val QQ = 2

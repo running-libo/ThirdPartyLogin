@@ -7,14 +7,13 @@ import com.github.thirdpartylogin.utils.LogUtil
 
 /**
  * @author: libo
- * @date: 2023/5/3 14:21
+ * @date: 2023/5/3 15:20
  * @Description:
  */
-class WechatLogin: ILoginApi {
+class QQLogin: ILoginApi {
 
     override fun login(callBack: ILoginCallBack?) {
-        LogUtil.v(Tags.COMMON, "wechat login start")
+        LogUtil.v(Tags.COMMON, "qq login start")
 
-        callBack?.onLoginFail()
     }
 }

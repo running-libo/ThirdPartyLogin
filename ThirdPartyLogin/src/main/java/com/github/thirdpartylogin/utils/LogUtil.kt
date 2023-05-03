@@ -10,6 +10,12 @@ import com.github.thirdpartylogin.BuildConfig
  */
 object LogUtil {
 
+    inline fun v(tag:() -> String, message:() -> String) {
+        if (BuildConfig.IS_DEBUG) {
+            Log.v(tag(), message())
+        }
+    }
+
     fun v(tag: String, msg: String) {
         if (BuildConfig.IS_DEBUG) {
             Log.v(tag, msg)

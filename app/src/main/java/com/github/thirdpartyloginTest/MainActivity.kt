@@ -2,7 +2,9 @@ package com.github.thirdpartyloginTest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.github.thirdpartylogin.api.ILogin
+import com.github.thirdpartylogin.api.ILoginApi
+import com.github.thirdpartylogin.api.ILoginCallBack
+import com.github.thirdpartylogin.constant.PlatformType
 import com.github.thirdpartylogin.constant.Tags
 import com.github.thirdpartylogin.utils.LogUtil
 import com.github.thirdpartyloginTest.databinding.ActivityMainBinding
@@ -20,23 +22,40 @@ class MainActivity : AppCompatActivity() {
 
     private fun event() {
         binding?.btnWechat?.setOnClickListener {
-            LogUtil.v(Tags.COMMON, "wechat login click")
+            handleLogin(PlatformType.WECHAT, Tags.WECHAT)
         }
 
         binding?.btnQq?.setOnClickListener {
-            LogUtil.v(Tags.COMMON, "qq login click")
+            handleLogin(PlatformType.QQ, Tags.QQ)
         }
 
         binding?.btnSina?.setOnClickListener {
-            LogUtil.v(Tags.COMMON, "sina login click")
+            handleLogin(PlatformType.SINA, Tags.SINA)
         }
 
         binding?.btnGoogle?.setOnClickListener {
-            LogUtil.v(Tags.COMMON, "google login click")
+            handleLogin(PlatformType.GOOGLE, Tags.GOOGLE)
         }
 
         binding?.btnFacebook?.setOnClickListener {
-            LogUtil.v(Tags.COMMON, "facebook login click")
+            handleLogin(PlatformType.FACEBOOK, Tags.FACEBOOK)
         }
+    }
+
+    private fun handleLogin(@PlatformType platformType: Int, tag: String) {
+        LogUtil.v(Tags.COMMON, "$platformType login click")
+        ILoginApi.Factory.create(platformType)?.login(object: ILoginCallBack {
+            override fun onLoginSuccess() {
+                LogUtil.v(tag, "$platformType onLoginSuccess")
+            }
+
+            override fun onLoginCancel() {
+                LogUtil.v(tag, "$platformType onLoginCancel")
+            }
+
+            override fun onLoginFail() {
+                LogUtil.v(tag, "$platformType onLoginFail")
+            }
+        })
     }
 }

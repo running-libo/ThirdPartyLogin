@@ -8,6 +8,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven { url "https://dl.bintray.com/thelasterstar/maven/" } //微博
         google()
         mavenCentral()
     }
