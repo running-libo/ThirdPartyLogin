@@ -6,7 +6,7 @@ import com.github.thirdpartylogin.BuildConfig
 /**
  * @author: libo
  * @date: 2023/5/3 09:43
- * @Description: 日志工具类
+ * @Description: 日志工具类，仅在debug模式下打日志
  */
 object LogUtil {
 

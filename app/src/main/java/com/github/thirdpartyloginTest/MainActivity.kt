@@ -2,7 +2,7 @@ package com.github.thirdpartyloginTest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import com.github.thirdpartylogin.api.ILogin
 import com.github.thirdpartylogin.constant.Tags
 import com.github.thirdpartylogin.utils.LogUtil
 import com.github.thirdpartyloginTest.databinding.ActivityMainBinding

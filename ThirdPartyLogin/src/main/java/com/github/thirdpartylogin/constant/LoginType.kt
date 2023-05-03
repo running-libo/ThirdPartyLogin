@@ -1,7 +1,6 @@
 package com.github.thirdpartylogin.constant
 
 import androidx.annotation.IntDef
-import java.lang.annotation.RetentionPolicy
 
 /**
  * @author: libo
@@ -14,7 +13,8 @@ import java.lang.annotation.RetentionPolicy
     LoginType.SINA,
     LoginType.GOOGLE,
     LoginType.FACEBOOK)
-@java.lang.annotation.Retention(RetentionPolicy.SOURCE)
+@Retention(AnnotationRetention.SOURCE)
+@Target(AnnotationTarget.VALUE_PARAMETER)
 annotation class LoginType {
     companion object {
         const val WECHAT = 1
